@@ -1,0 +1,26 @@
+{{ partial "footer/esbuild" (dict "src" "js/bootstrap.js" "load" "async" "transpile" false) -}}
+{{ partial "footer/esbuild" (dict "src" "js/app.js" "targetPath" "main.js" "load" "async" "transpile" false) -}}
+
+{{/* EXAMPLE - only load script for production
+{{ if eq (hugo.Environment) "production" -}}
+  {{ partial "footer/esbuild" (dict "src" "js/instantpage.js" "load" "async" "transpile" false) -}}
+{{ end -}}
+*/}}
+
+{{/* EXAMPLE - only load script for a page type e.g. contact or gallery
+{{ if eq .Type "gallery" }}
+  {{ partial "footer/esbuild" (dict "src" "js/gallery.js" "load" "async" "transpile" false) -}}
+{{ end }}
+*/}}
+
+
+<script>
+  // Initialize Scratchblock render
+  scratchblocks.renderMatching("p code", {inline: true, style: 'scratch3', scale: 1});
+  scratchblocks.renderMatching("pre code", {inline: false, style: 'scratch3', scale: 1});
+  //scratchblocks.renderMatching("pre.blocks", ...)
+  //scratchblocks.renderMatching("code.b", {
+  //  inline: true,
+    // Repeat `style` and `languages` options here.
+  //});
+  </script>

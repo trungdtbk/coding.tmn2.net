@@ -1,0 +1,104 @@
+//** Import boostrap-icons */
+//@import "bootstrap-icons/font/bootstrap-icons.scss";
+
+/** Import Bootstrap functions */
+@import "bootstrap/scss/functions";
+
+/** Import theme variables */
+@import "common/variables";
+
+/** Import Bootstrap */
+@import "bootstrap/scss/bootstrap";
+
+/** Import theme styles */
+@import "common/fonts";
+@import "common/global";
+@import "components/alerts";
+@import "components/buttons";
+@import "components/code";
+
+// @import "components/syntax";
+@import "components/comments";
+@import "components/forms";
+@import "components/images";
+@import "layouts/footer";
+@import "layouts/header";
+@import "layouts/pages";
+@import "layouts/posts";
+@import "layouts/sidebar";
+
+
+.masonry-container {
+  margin: 0 auto;
+}
+
+.masonry-container:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.masonry-item {
+  @extend .card;
+  width: 310px;
+  float: left;
+  margin-bottom: 10px;
+  padding: 1px;
+}
+
+.masonry-item a, a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: rgb(8, 18, 88);
+}
+
+.masonry-item:hover {
+  border: 4px solid rgb(0, 240, 0);
+  border-style: outset;
+}
+
+.masonry-item-coverimg {
+  width: 100%;
+  padding-top: 5px;
+}
+
+.masonry-item-coverimg img {
+  border-radius: 5px 5px 0 0;
+  min-width: 100%;
+  height: auto;
+}
+
+.masonry-item-action {
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.masonry-item-body {
+  padding: 5px;
+}
+
+.masonry-item-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}
+
+.masonry-item-text {
+  font-size: 0.9em;
+}
+
+.masonry-item-small {
+  @extend .masonry-item;
+  width: 245px;
+}
+
+
+.scratchblocks {
+  margin: 0;
+  padding: 0;
+}
+
+.scratchblocks-inline {
+    svg {
+      height: 2.5em;
+    }
+}

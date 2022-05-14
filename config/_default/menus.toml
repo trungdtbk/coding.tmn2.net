@@ -1,0 +1,13 @@
+[[main]]
+  identifier = "home"
+  pre = "<i class='bi bi-house'></i>"
+  url = "/"
+  name = "Home"
+  weight = 10
+
+[[main]]
+  identifier = "projects"
+  pre = "<i class='bi bi-laptop'></i>"
+  url = "/tutorials/"
+  name = "Tutorials"
+  weight = 20
