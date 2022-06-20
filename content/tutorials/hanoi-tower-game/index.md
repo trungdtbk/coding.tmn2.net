@@ -50,7 +50,7 @@ Make sure to change the Variable Column1-X-Position to the correct one for each 
 #### 2. Create Plates
 
 Create a new Sprite and call it **Plate1**. Draw appropriate Costume for it.
-We need to know if one plate is bigger or smaller than the other. I use a Variable called `Plate<X>-ID` to tell me which one is which. For Plate1, its **Plate1-ID** has value 1. Plate2 has `set [Plate2-ID v] to (2)` and so on. Plate with bigger ID is bigger.
+We need to know if one plate is bigger or smaller than the other. I use a Variable called `(PlateX-ID)` to tell me which one is which. For Plate1, its **Plate1-ID** has value 1. Plate2 has `set [Plate2-ID v] to (2)` and so on. Plate with bigger ID is bigger.
 
 Put this code to Plate1:
 ```
@@ -157,7 +157,7 @@ When I receive [Game has started v]
         go to x:(Column3-X-Position) y:(( (length of [Plate-Positions v]) - (length of [Plates-of-Column3 v]) ) + (item # of (Plate1-ID) in [Plates-of-Column3 v]))
     end
     end
-    if < <(item # of (Plate1-ID) in [Plates-of-Column1 v])=(1)> or < <(item # of (Plate1-ID) in [Plates-of-Column2 v])=(1)> or <(item # of (Plate1-ID) in [Plates-of-Column3 v])=(1)>  >>
+    if < <(item # of (Plate1-ID) in [Plates-of-Column1 v])=(1)> or < <(item # of (Plate1-ID) in [Plates-of-Column2 v])=(1)> or <(item # of (Plate1-ID) in [Plates-of-Column3 v])=(1)>  >> then
       set drag mode [draggable v]
     else
       set drag mode [non draggable v]
@@ -194,7 +194,7 @@ The player can only move if the plate is smaller or the Column is empty. Impleme
 
 ```
 if < touching (Column1 v)?> then
-  if < <(Plate1-ID)<(item (1) of [Plates-of-Column1 v])  > or < (length of [Plates-of-Column1 v])=(0)>  >
+  if < <(Plate1-ID)<(item (1) of [Plates-of-Column1 v])  > or < (length of [Plates-of-Column1 v])=(0)>  > then
   delete (item # of (Plate1-ID) in [Plates-of-Column1 v])
   delete (item # of (Plate1-ID) in [Plates-of-Column2 v])
   delete (item # of (Plate1-ID) in [Plates-of-Column3 v])
@@ -206,7 +206,7 @@ Now extend the code for other Columns as well:
 
 ```
 if < touching (Column1 v)?> then
-  if < <(Plate1-ID)<(item (1) of [Plates-of-Column1 v])  > or < (length of [Plates-of-Column1 v])=(0)>  >
+  if < <(Plate1-ID)<(item (1) of [Plates-of-Column1 v])  > or < (length of [Plates-of-Column1 v])=(0)>  > then
   delete (item # of (Plate1-ID) in [Plates-of-Column1 v])
   delete (item # of (Plate1-ID) in [Plates-of-Column2 v])
   delete (item # of (Plate1-ID) in [Plates-of-Column3 v])
@@ -214,7 +214,7 @@ if < touching (Column1 v)?> then
   end
 end
 if < touching (Column2 v)?> then
-  if < <(Plate1-ID)<(item (1) of [Plates-of-Column2 v])  > or < (length of [Plates-of-Column2 v])=(0)>  >
+  if < <(Plate1-ID)<(item (1) of [Plates-of-Column2 v])  > or < (length of [Plates-of-Column2 v])=(0)>  > then
   delete (item # of (Plate1-ID) in [Plates-of-Column1 v])
   delete (item # of (Plate1-ID) in [Plates-of-Column2 v])
   delete (item # of (Plate1-ID) in [Plates-of-Column3 v])
@@ -222,7 +222,7 @@ if < touching (Column2 v)?> then
   end
 end
 if < touching (Column3 v)?> then
-  if < <(Plate1-ID)<(item (1) of [Plates-of-Column1 v])  > or < (length of [Plates-of-Column3 v])=(0)>  >
+  if < <(Plate1-ID)<(item (1) of [Plates-of-Column1 v])  > or < (length of [Plates-of-Column3 v])=(0)>  > then
   delete (item # of (Plate1-ID) in [Plates-of-Column1 v])
   delete (item # of (Plate1-ID) in [Plates-of-Column2 v])
   delete (item # of (Plate1-ID) in [Plates-of-Column3 v])
@@ -237,7 +237,7 @@ We need to make this this code runs all the time, so it can check the plate move
 When flag clicked
 forever
 if < touching (Column1 v)?> then
-  if < <(Plate1-ID)<(item (1) of [Plates-of-Column1 v])  > or < (length of [Plates-of-Column1 v])=(0)>  >
+  if < <(Plate1-ID)<(item (1) of [Plates-of-Column1 v])  > or < (length of [Plates-of-Column1 v])=(0)>  > then
   delete (item # of (Plate1-ID) in [Plates-of-Column1 v])
   delete (item # of (Plate1-ID) in [Plates-of-Column2 v])
   delete (item # of (Plate1-ID) in [Plates-of-Column3 v])
@@ -245,7 +245,7 @@ if < touching (Column1 v)?> then
   end
 end
 if < touching (Column2 v)?> then
-  if < <(Plate1-ID)<(item (1) of [Plates-of-Column2 v])  > or < (length of [Plates-of-Column2 v])=(0)>  >
+  if < <(Plate1-ID)<(item (1) of [Plates-of-Column2 v])  > or < (length of [Plates-of-Column2 v])=(0)>  > then
   delete (item # of (Plate1-ID) in [Plates-of-Column1 v])
   delete (item # of (Plate1-ID) in [Plates-of-Column2 v])
   delete (item # of (Plate1-ID) in [Plates-of-Column3 v])
@@ -253,7 +253,7 @@ if < touching (Column2 v)?> then
   end
 end
 if < touching (Column3 v)?> then
-  if < <(Plate1-ID)<(item (1) of [Plates-of-Column1 v])  > or < (length of [Plates-of-Column3 v])=(0)>  >
+  if < <(Plate1-ID)<(item (1) of [Plates-of-Column1 v])  > or < (length of [Plates-of-Column3 v])=(0)>  > then
   delete (item # of (Plate1-ID) in [Plates-of-Column1 v])
   delete (item # of (Plate1-ID) in [Plates-of-Column2 v])
   delete (item # of (Plate1-ID) in [Plates-of-Column3 v])
@@ -267,6 +267,30 @@ Now, test it to see if it works as expected. If not fix it before moving on.
 
 #### Add more Plates
 We need to add three more plates. This is now simple. We just need to duplicate the Plate1 and add more variables Plate2-ID, Plate3-ID and Plate4-ID. Replace the Plate1-ID with the correct plate ID in those new Sprites.
+
+Remember to add Plate2, Plate3 and Plate4 into the Game Init blocks:
+
+
+```
+when flag clicked
+  set [Column1-X-Position v] to (-135)
+  set [Column2-X-Position v] to (0)
+  set [Column3-X-Position v] to (135)
+  delete all of [Plates-of-Column1 v]
+  delete all of [Plates-of-Column2 v]
+  delete all of [Plates-of-Column3 v]
+  add (Plate1-ID) to [Plates-of-Column1 v]
+  add (Plate2-ID) to [Plates-of-Column1 v]
+  add (Plate3-ID) to [Plates-of-Column1 v]
+  add (Plate4-ID) to [Plates-of-Column1 v]
+  delete all of [Plate-Positions v]
+  add (-114) to [Plate-Positions v]
+  add (-126) to [Plate-Positions v]
+  add (-138) to [Plate-Positions v]
+  add (-150) to [Plate-Positions v]
+  broadcast (Game has started)
+```
+
 
 
 ## Check if the player has won
