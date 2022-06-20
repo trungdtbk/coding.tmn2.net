@@ -27,7 +27,7 @@ Let break down what we need to complete. There are a few logics we need to imple
 ### Create UI
 
 #### 1. Create 3 Columns
-In this game we need three columns. I create a Sprite for each column and call them Column1, Column2 and Column3. Because we later need to put the plates into those columns, I create three Variables: `(Column1-X-Position)`, `Column2-X-Position`, `Column2-X-Position` which tells me where is the column in the X axis.
+In this game we need three columns. I create a Sprite for each column and call them Column1, Column2 and Column3. Because we later need to put the plates into those columns, I create three Variables: `(Column1-X-Position)`, `(Column2-X-Position)`, `(Column3-X-Position)` which tells me where is the column in the X axis.
 
 When the game starts, we need to set it up (e.g. set values for the variables, put plates in the first columns, etc), so I create a Sprite without Costume called **Game Init** to help me do the setup. Put this code to the Game Init sprite:
 
@@ -129,11 +129,11 @@ When I receive [Game has started v]
     if <[Plates-of-Column1] contains (Plate1-ID)?> then
       go to x:(Column1-X-Position) y:(( (length of [Plate-Positions v]) - (length of [Plates-of-Column1 v]) ) + (item # of (Plate1-ID) in [Plates-of-Column1 v]))
     else
-    if <[Plates-of-Column1] contains (Plate1-ID)?> then
-      go to x:(Column1-X-Position) y:(( (length of [Plate-Positions v]) - (length of [Plates-of-Column1 v]) ) + (item # of (Plate1-ID) in [Plates-of-Column1 v]))
+    if <[Plates-of-Column2] contains (Plate1-ID)?> then
+      go to x:(Column2-X-Position) y:(( (length of [Plate-Positions v]) - (length of [Plates-of-Column2 v]) ) + (item # of (Plate1-ID) in [Plates-of-Column2 v]))
     else
-      if <[Plates-of-Column1] contains (Plate1-ID)?> then
-        go to x:(Column1-X-Position) y:(( (length of [Plate-Positions v]) - (length of [Plates-of-Column1 v]) ) + (item # of (Plate1-ID) in [Plates-of-Column1 v]))
+      if <[Plates-of-Column3] contains (Plate1-ID)?> then
+        go to x:(Column3-X-Position) y:(( (length of [Plate-Positions v]) - (length of [Plates-of-Column3 v]) ) + (item # of (Plate1-ID) in [Plates-of-Column3 v]))
     end
     end
 ```
