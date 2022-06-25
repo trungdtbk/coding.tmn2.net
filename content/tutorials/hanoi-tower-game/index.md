@@ -72,7 +72,7 @@ when flag clicked
   delete all of [Plates-of-Column2 v]
   delete all of [Plates-of-Column3 v]
   add (Plate1-ID) to [Plates-of-Column1 v]
-  broadcast (Game has started)
+  broadcast (Game has started v)
 ```
 
 Run the test by clicking on the Green flag and check if the List variable `(Plates-of-Column1)` has 1 in it.
@@ -103,7 +103,7 @@ when flag clicked
   add (-126) to [Plate-Positions v]
   add (-138) to [Plate-Positions v]
   add (-150) to [Plate-Positions v]
-  broadcast (Game has started)
+  broadcast (Game has started v)
 ```
 
 
@@ -288,7 +288,7 @@ when flag clicked
   add (-126) to [Plate-Positions v]
   add (-138) to [Plate-Positions v]
   add (-150) to [Plate-Positions v]
-  broadcast (Game has started)
+  broadcast (Game has started v)
 ```
 
 
