@@ -36,7 +36,7 @@ when flag clicked
   set [Column1-X-Position v] to (-135)
   set [Column2-X-Position v] to (0)
   set [Column3-X-Position v] to (135)
-  broadcast (Game has started)
+  broadcast (Game has started v)
 ```
 
 Then for each of the Columns, put this code to move them to the correct position:
